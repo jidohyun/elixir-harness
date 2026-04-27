@@ -1,0 +1,12 @@
+# Paths ignored by harness/status/spec checking.
+# Adjust per project.
+ignored_paths:
+  - deps/**
+  - _build/**
+  - priv/static/**
+  - assets/node_modules/**
+  - .git/**
+  - .env
+  - .env.*
+  - tmp/**
+  - log/**
