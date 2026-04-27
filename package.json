@@ -1,0 +1,45 @@
+{
+  "name": "@jidohyun/elixir-harness",
+  "version": "0.1.0",
+  "description": "Repo-local spec-first harness for AI-assisted Elixir/Phoenix development",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "elixir-harness": "bin/elixir-harness.js"
+  },
+  "files": [
+    "bin/",
+    "architecture/",
+    "status/",
+    "spec/",
+    "rules/",
+    "knowledge/",
+    "framework/",
+    "design/",
+    "issues/",
+    "qa/",
+    "tasks/",
+    "docs/",
+    "AGENTS.md",
+    "config.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jidohyun/elixir-harness.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jidohyun/elixir-harness/issues"
+  },
+  "homepage": "https://github.com/jidohyun/elixir-harness#readme",
+  "scripts": {
+    "smoke": "node bin/elixir-harness.js --help && node bin/elixir-harness.js init /tmp/elixir-harness-smoke --force"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
