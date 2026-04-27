@@ -23,7 +23,7 @@ Install and configure elixir-harness by following the instructions here:
 https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md
 ```
 
-Or read the [Installation Guide](https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md), but seriously, let an agent do it. Humans fat-finger specs.
+Or read the [Installation Guide](./docs/guide/installation.md), but seriously, let an agent do it. Humans fat-finger specs.
 
 ---
 

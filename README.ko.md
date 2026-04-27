@@ -23,7 +23,7 @@ Install and configure elixir-harness by following the instructions here:
 https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md
 ```
 
-또는 [Installation Guide](https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md)를 직접 읽어도 됩니다. 하지만 가능하면 에이전트에게 시키세요. 사람은 설정과 spec을 자주 잘못 복붙합니다.
+또는 [Installation Guide](./docs/guide/installation.md)를 직접 읽어도 됩니다. 하지만 가능하면 에이전트에게 시키세요. 사람은 설정과 spec을 자주 잘못 복붙합니다.
 
 ---
 
