@@ -10,9 +10,7 @@ Elixir/Phoenix 프로젝트에서 AI 코딩 에이전트를 더 안전하게 굴
 architecture → status → spec → rules → issues → implementation → QA
 ```
 
-## 설치
-
-### LLM 에이전트용
+## LLM 에이전트용
 
 설치 가이드를 가져와서 그대로 따르세요.
 
@@ -20,21 +18,9 @@ architecture → status → spec → rules → issues → implementation → QA
 curl -s https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md
 ```
 
-이미 대상 Elixir/Phoenix 저장소의 루트에 있다면 빠른 설치는 다음과 같습니다.
-
-```bash
-npx -y @jidohyun/elixir-harness init .
-```
-
-그 다음 이 파일을 읽으세요.
-
-```bash
-.code_my_spec/AGENTS.md
-```
-
 Note: `elixir-harness`는 프로젝트 로컬 가이드만 설치합니다. telemetry를 수집하지 않고, 애플리케이션 코드를 수정하지 않으며, Elixir 프로젝트에 runtime dependency를 추가하지 않습니다. 기본 harness 디렉토리는 `.code_my_spec/`입니다. 다른 이름을 원하면 `--dir <name>`을 사용하세요.
 
-### 사람용 설치
+## 사람용 설치
 
 `npx`로 바로 사용:
 

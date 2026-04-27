@@ -10,9 +10,7 @@ A lightweight, repo-local, spec-first harness for AI-assisted Elixir/Phoenix dev
 architecture → status → spec → rules → issues → implementation → QA
 ```
 
-## Installation
-
-### For LLM Agents
+## For LLM Agents
 
 Fetch the installation guide and follow it:
 
@@ -20,21 +18,9 @@ Fetch the installation guide and follow it:
 curl -s https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md
 ```
 
-Quick install, if you are already at the root of the target Elixir/Phoenix repository:
-
-```bash
-npx -y @jidohyun/elixir-harness init .
-```
-
-Then read:
-
-```bash
-.code_my_spec/AGENTS.md
-```
-
 Note: `elixir-harness` installs project-local guidance only. It does not collect telemetry, does not modify application code, and does not add runtime dependencies to your Elixir project. The default harness directory is `.code_my_spec/`. Use `--dir <name>` if the project wants a different directory.
 
-### For humans
+## Installation for Humans
 
 Use directly with `npx`:
 
