@@ -10,7 +10,24 @@ A lightweight, repo-local, spec-first harness for AI-assisted Elixir/Phoenix dev
 architecture → status → spec → rules → issues → implementation → QA
 ```
 
-## For LLM Agents
+## Installation
+
+---
+
+### For Humans
+
+Copy and paste this prompt to your LLM agent (Claude Code, AmpCode, Cursor, Codex, etc.):
+
+```text
+Install and configure elixir-harness by following the instructions here:
+https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md
+```
+
+Or read the [Installation Guide](https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md), but seriously, let an agent do it. Humans fat-finger specs.
+
+---
+
+### For LLM Agents
 
 Fetch the installation guide and follow it:
 
@@ -20,7 +37,9 @@ curl -s https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/mai
 
 Note: `elixir-harness` installs project-local guidance only. It does not collect telemetry, does not modify application code, and does not add runtime dependencies to your Elixir project. The default harness directory is `.code_my_spec/`. Use `--dir <name>` if the project wants a different directory.
 
-## Installation for Humans
+---
+
+### Manual install
 
 Use directly with `npx`:
 

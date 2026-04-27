@@ -10,7 +10,24 @@ Elixir/Phoenix 프로젝트에서 AI 코딩 에이전트를 더 안전하게 굴
 architecture → status → spec → rules → issues → implementation → QA
 ```
 
-## LLM 에이전트용
+## 설치
+
+---
+
+### 사람용
+
+아래 프롬프트를 LLM 에이전트에게 그대로 복붙하세요. Claude Code, AmpCode, Cursor, Codex 등에서 사용할 수 있습니다.
+
+```text
+Install and configure elixir-harness by following the instructions here:
+https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md
+```
+
+또는 [Installation Guide](https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md)를 직접 읽어도 됩니다. 하지만 가능하면 에이전트에게 시키세요. 사람은 설정과 spec을 자주 잘못 복붙합니다.
+
+---
+
+### LLM 에이전트용
 
 설치 가이드를 가져와서 그대로 따르세요.
 
@@ -20,7 +37,9 @@ curl -s https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/mai
 
 Note: `elixir-harness`는 프로젝트 로컬 가이드만 설치합니다. telemetry를 수집하지 않고, 애플리케이션 코드를 수정하지 않으며, Elixir 프로젝트에 runtime dependency를 추가하지 않습니다. 기본 harness 디렉토리는 `.code_my_spec/`입니다. 다른 이름을 원하면 `--dir <name>`을 사용하세요.
 
-## 사람용 설치
+---
+
+### 수동 설치
 
 `npx`로 바로 사용:
 
