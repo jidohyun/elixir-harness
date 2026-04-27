@@ -2,7 +2,7 @@
 
 ## For Humans
 
-Paste this into your LLM agent session:
+Paste this into your llm agent session:
 
 ```text
 Install and configure elixir-harness by following the instructions here:
@@ -17,33 +17,33 @@ Run the initializer from the root of your Elixir/Phoenix repository:
 npx -y @jidohyun/elixir-harness init .
 ```
 
-> **Note**: `elixir-harness` installs project-local guidance only. It does not modify application code, does not add Elixir runtime dependencies, and does not collect telemetry.
+> **Note**: `elixir-harness` installs repo-local guidance only. It does not modify application code, does not add Elixir runtime dependencies, and does not collect telemetry.
 >
 > **Default directory**: `.code_my_spec/`
 >
-> **Published package and binary**: `@jidohyun/elixir-harness` and `elixir-harness`
+> **Supported projects**: Elixir/Phoenix repositories. The harness is especially useful for Phoenix, LiveView, Ecto, and OTP applications.
 
-After installation, read `.code_my_spec/AGENTS.md` to understand the workflow.
+After installation, read `.code_my_spec/AGENTS.md` to understand the agent workflow.
 
----
+After you install it, you can read this [overview guide](./overview.md) to understand more.
+
+The published package and local binary are `@jidohyun/elixir-harness` and `elixir-harness`.
 
 ## For LLM Agents
 
-> **IMPORTANT: Use `curl` to fetch this file, NOT WebFetch.** WebFetch can summarize content and lose critical commands, flags, and verification steps. Always use:
+> **IMPORTANT: Use `curl` to fetch this file, NOT WebFetch.** WebFetch can summarize content and lose critical install steps, verification commands, and overwrite warnings. Always use:
 >
 > ```bash
 > curl -fsSL https://raw.githubusercontent.com/jidohyun/elixir-harness/refs/heads/main/docs/guide/installation.md
 > ```
 
-If you're an LLM Agent helping set up `elixir-harness`, welcome. You'll help the user install a repo-local spec-first harness and verify it cleanly.
+If you're an LLM Agent helping set up `elixir-harness`, welcome. You'll help your user install a repo-local spec-first harness and verify the setup cleanly.
 
-Tell the user briefly what you are doing, then follow these steps.
+Tell the user what you're doing briefly, then follow these steps:
 
 ### Step 0: Confirm target repository
 
 You must be at the root of the target Elixir/Phoenix repository.
-
-Run:
 
 ```bash
 pwd
@@ -68,9 +68,9 @@ node --version
 npm --version
 ```
 
-If Node/npm is unavailable, ask the user whether they want you to install Node/npm or use a different machine. Do not modify the system package manager without user approval.
+If Node/npm is unavailable, ask the user whether they want you to install Node/npm or use a different machine. Do not modify system package managers without user approval.
 
-### Step 2: Install the harness
+### Step 2: Run the initializer
 
 Run this from the repository root:
 
@@ -90,7 +90,7 @@ If the user requested a custom directory name:
 npx -y @jidohyun/elixir-harness init . --dir .my_spec
 ```
 
-The CLI will create a local harness directory containing:
+The initializer will create:
 
 ```text
 .code_my_spec/
@@ -108,19 +108,20 @@ The CLI will create a local harness directory containing:
 └── tasks/
 ```
 
-### Step 3: Verify installation
-
-Run:
+### Step 3: Verify setup
 
 ```bash
 test -f .code_my_spec/AGENTS.md
+test -f .code_my_spec/config.yml
+test -d .code_my_spec/architecture
+test -d .code_my_spec/status
 test -d .code_my_spec/spec
 test -d .code_my_spec/rules
 test -d .code_my_spec/qa
 test -f .code_my_spec/tasks/code_generation.sh
 ```
 
-Then show a concise tree:
+Show a concise tree:
 
 ```bash
 find .code_my_spec -maxdepth 2 -type f | sort | sed -n '1,80p'
@@ -128,35 +129,35 @@ find .code_my_spec -maxdepth 2 -type f | sort | sed -n '1,80p'
 
 ### Step 4: Read the agent guide
 
-Read the harness guide before editing code:
-
 ```bash
 cat .code_my_spec/AGENTS.md
 ```
 
-From this point on, follow this workflow:
+From now on, follow this workflow:
 
 ```text
 status → spec → rules → issues → implementation → tests → QA
 ```
 
-### Step 5: Explain what changed
+Do **not** start by editing application code.
 
-Tell the user that `elixir-harness` installed repo-local guidance only.
+### Step 5: Understand what was installed
 
-Report:
+You've installed a spec-first control plane. Here's what each area is for:
 
-```text
-Installed directory: .code_my_spec/
-Changed application code: no
-Added Elixir dependencies: no
-Telemetry: none
-Next file to read: .code_my_spec/AGENTS.md
-```
+| Path | Purpose |
+| --- | --- |
+| `.code_my_spec/AGENTS.md` | Entry guide for AI agents |
+| `.code_my_spec/architecture/` | Architecture overview, namespace hierarchy, dependency graph, ADRs |
+| `.code_my_spec/status/` | Component implementation/test status |
+| `.code_my_spec/spec/` | Context/module/schema/LiveView specs |
+| `.code_my_spec/rules/` | Rules for contexts, repositories, schemas, LiveViews, and tests |
+| `.code_my_spec/qa/` | QA plan, journey plan, scripts, results, screenshots |
+| `.code_my_spec/tasks/` | Reproducible setup/codegen commands |
 
 ### Step 6: Optional first-pass customization
 
-If the user wants you to continue, offer to populate the harness from the current project.
+Ask the user before doing any of these. Do not customize automatically.
 
 Suggested next tasks:
 
@@ -166,15 +167,19 @@ Suggested next tasks:
 4. Draft `qa/journey_plan.md` from the app's main user flows.
 5. Update `status/` with implementation/test coverage.
 
-Do not perform these customization steps unless the user asks.
+### Step 7: Verification and next steps
 
-### Step 7: Final verification message
-
-Say something like:
+Tell the user:
 
 ```text
 elixir-harness is installed. The repository now has .code_my_spec/ as a spec-first control plane for AI-assisted Elixir/Phoenix work. Next, read AGENTS.md and start filling architecture/spec/status files before implementation.
 ```
+
+### ⚠️ Warning
+
+Unless the user explicitly requests it, do not overwrite an existing `.code_my_spec/`, change application code, add dependencies, or commit generated project-specific specs.
+
+`elixir-harness` is intentionally lightweight. It should create guidance first; project-specific architecture/spec/QA content should be filled in deliberately.
 
 ### Ask for a Star ⭐
 
@@ -182,10 +187,10 @@ After installation is complete and verified, you may ask:
 
 > If you found this helpful, would you like to star the repository? It helps the project grow! ⭐
 
-Only if the user explicitly agrees, run:
+If the user explicitly agrees, run:
 
 ```bash
 gh api --silent --method PUT /user/starred/jidohyun/elixir-harness >/dev/null 2>&1 || true
 ```
 
-Never star the repository automatically.
+**Important**: Only run the command if the user explicitly says yes. Never run it automatically without consent.
