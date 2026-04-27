@@ -1,6 +1,6 @@
 {
   "name": "@jidohyun/elixir-harness",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Repo-local spec-first harness for AI-assisted Elixir/Phoenix development",
   "license": "MIT",
   "type": "commonjs",
